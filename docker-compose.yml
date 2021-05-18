@@ -1,0 +1,39 @@
+version: "3.8"
+services:  
+  mysql:    
+    image: mysql:5.7
+    container_name: mysql
+    environment: 
+      MYSQL_ROOT_PASSWORD: root      
+    platform: "linux/x86_64"
+    volumes: 
+      - mysql-data:/etc/mysql/conf.d
+    networks:
+      - backend-network
+  mongo:    
+    image: mvertes/alpine-mongo:latest
+    container_name: mongo         
+    platform: "linux/x86_64"
+    volumes: 
+      - mongodb-data:/data/db
+    networks:
+      - backend-network
+  nodejs_backend:
+    container_name: nodejs_backend
+    build: .
+    platform: "linux/x86_64"
+    environment: 
+      PORT: 3011
+      WAIT_HOSTS: mysql:3306, mongo:27017
+    ports: 
+      - 3011:3011
+    networks:
+      - backend-network        
+    volumes: 
+      - .:/nodejs_backend_scrap
+      - /nodejs_backend_scrap/node_modules/
+networks:
+  backend-network: 
+volumes: 
+  mysql-data:
+  mongodb-data:

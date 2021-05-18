@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "root",
+    "password": "root",
+    "database": "scrap_dev",
+    "host": "mysql", 
+    "dialect": "mysql",
+    "logging": false
+  },
+  "test": {
+    "username": "root",
+    "password": "root",
+    "database": "scrap_test",
+    "host": "mysql",
+    "dialect": "mysql",
+    "logging": false
+  },
+  "production": {
+    "username": "root",
+    "password": "root",
+    "database": "scrap_prod",
+    "host": "mysql",
+    "dialect": "mysql",
+    "logging": false
+  }
+}
