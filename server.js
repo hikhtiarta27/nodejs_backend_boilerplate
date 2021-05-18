@@ -7,7 +7,7 @@ db.sequelize
   .sync()
   .then(() => {
     app.listen(PORT, () => {
-      console.log("Server started in : " + PORT)
+      console.log("Server started in: " + PORT)
     })
   })
   .catch((err) => {
