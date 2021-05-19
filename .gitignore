@@ -1,2 +1,5 @@
 node_modules
 seeders
+docker-compose.yml
+Dockerfile
+.dockerignore

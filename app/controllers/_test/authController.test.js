@@ -59,7 +59,7 @@ describe("testing auth api", () => {
 
   test("login should be success", async (done) => {
     const response = await supertest(app)
-      .post("/api/auth/signin")
+      .post("/api/auth/login")
       .set("Content-Type", "application/x-www-form-urlencoded")
       .send({ email, password })
       .expect(200)
@@ -74,7 +74,7 @@ describe("testing auth api", () => {
     let email = "user-test1@gmail.com"    
 
     const response = await supertest(app)
-      .post("/api/auth/signin")
+      .post("/api/auth/login")
       .set("Content-Type", "application/x-www-form-urlencoded")
       .send({ email, password })
       .expect(401)
@@ -89,7 +89,7 @@ describe("testing auth api", () => {
     let password = "user-test1"
 
     const response = await supertest(app)
-      .post("/api/auth/signin")
+      .post("/api/auth/login")
       .set("Content-Type", "application/x-www-form-urlencoded")
       .send({ email, password })
       .expect(401)

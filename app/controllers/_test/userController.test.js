@@ -2,7 +2,7 @@ const db = require("../../models")
 const supertest = require("supertest")
 const faker = require("faker")
 const app = require("../../../app")
-const userController = require("../user")
+const userRepository = require("../../repository/userRepository")
 
 describe("testing user api", () => {
   let email = "user-test1@gmail.com"
@@ -16,9 +16,9 @@ describe("testing user api", () => {
     await db.sequelize.sync({
       force: true,
     })
-    await userController.addUser({ email, password, name, address, phoneNumber })
+    await userRepository.add({ email, password, name, address, phoneNumber })
     let response = await supertest(app)
-      .post("/api/auth/signin")
+      .post("/api/auth/login")
       .set("Content-Type", "application/x-www-form-urlencoded")
       .send({ email, password })
       .expect(200)

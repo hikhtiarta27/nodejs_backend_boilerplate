@@ -1,6 +1,6 @@
 var _res = require("../config/resConfig")
 const { isEmail } = require("../helper")
-const { Logger } = require("../log")
+const Logger = require("../log")
 
 function isValidEmail(req, res, next) {
   if (!isEmail(req.body.email)) {

@@ -6,10 +6,14 @@ module.exports = {
   getProvinces(req, res) {
     masterDataRepository.getProvinces()
       .then((val) => {
+        let obj = []
+        for(let i=0; i<val.length; i++){
+          obj.push(val[i].name)
+        }
         Logger.debug(req, "email:" + req.body.email + " SUCCESS GET PROVINCES")
         _res.error = false
         _res.message = "Get provinces"
-        _res.result = val
+        _res.result = obj
         res.status(200).send(_res)
       })
       .catch((err) => {
@@ -19,11 +23,17 @@ module.exports = {
 
   getCities(req, res) {
     masterDataRepository.getCities()
-      .then((val) => {
+      .then((val) => {        
+        let obj = {}
+        for(let i=0; i<val.length; i++){
+          let x = (obj[val[i].Province.name] == undefined ? [] : obj[val[i].Province.name])
+          x.push(val[i].name) 
+          obj[val[i].Province.name] = x         
+        }
         Logger.debug(req, "email:" + req.body.email + " SUCCESS GET CITIES")
         _res.error = false
         _res.message = "Get cities"
-        _res.result = val
+        _res.result = obj
         res.status(200).send(_res)
       })
       .catch((err) => {
