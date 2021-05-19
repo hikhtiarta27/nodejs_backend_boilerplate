@@ -278,3 +278,4 @@
 [5/18/2021 8:07:17 PM] /api/masterdata/province GET ::ffff:192.168.0.1 email:hasan@hasan.com SUCCESS GET PROVINCES
 [5/18/2021 8:07:26 PM] /api/masterdata/city GET ::ffff:192.168.0.1 email:hasan@hasan.com SUCCESS GET CITIES
 [5/19/2021 3:11:09 AM] /api/user/ GET ::ffff:192.168.0.1 email:hasan@hasan.com SUCCESS GET USER
+[5/19/2021 11:21:32 AM] /api/user/ GET ::ffff:192.168.0.1 email:hasan@hasan.com SUCCESS GET USER
