@@ -5,7 +5,12 @@
     "database": "scrap_dev",
     "host": "mysql", 
     "dialect": "mysql",
-    "logging": false
+    "logging": false,
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "idle": 10000
+    }
   },
   "test": {
     "username": "root",
@@ -13,7 +18,12 @@
     "database": "scrap_test",
     "host": "mysql",
     "dialect": "mysql",
-    "logging": false
+    "logging": false,
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "idle": 10000
+    }
   },
   "production": {
     "username": "root",
@@ -21,6 +31,11 @@
     "database": "scrap_prod",
     "host": "mysql",
     "dialect": "mysql",
-    "logging": false
+    "logging": false,
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "idle": 10000
+    }
   }
 }
